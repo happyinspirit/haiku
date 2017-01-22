@@ -1,1 +1,3 @@
 # haiku
+
+Basic haiku project
