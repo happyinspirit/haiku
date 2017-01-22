@@ -1,0 +1,18 @@
+@mixin rectangle($width, $height, $color: '', $radius: '') {
+    @if ($color != '') {
+        background-color: $color;
+    }
+    height: $height;
+    width: $width;
+
+    @if ($radius != '') {
+        @include border-radius($radius);
+    }
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
