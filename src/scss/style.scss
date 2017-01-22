@@ -1,0 +1,53 @@
+/**
+ * Make a rectangle in CSS in one line
+ */
+@mixin rectangle($width, $height, $color: '', $radius: '') {
+    width: $width;
+    height: $height;
+    @if ($color != '') {
+        background-color: $color;
+    }
+    @if ($radius != '') {
+        @include border-radius($radius);
+    }
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+.rect-dark-bamboo {
+    @include rectangle(50px, 200px, #009966, 0);
+}
+
+.rect-lt-bamboo {
+    @include rectangle(50px, 200px, lightgreen, 0);
+}
+
+.leaf-left {
+    height: 100px;
+    width: 100px;
+    left: -2rem;
+    position: relative;
+    top: 17rem;
+
+    background-color: #009966;
+    -moz-border-radius: 100px 0px;
+    -webkit-border-radius: 100px 0px;
+    border-radius: 100px 0px;
+}
+
+.leaf-right {
+    height: 100px;
+    left: -1.25rem;
+    position: relative;
+    top: 5rem;
+    width: 100px;
+    background-color: #009966;
+    -moz-border-radius: 0px 100px;
+    -webkit-border-radius: 0px 100px;
+    border-radius: 0px 100px;
+}
