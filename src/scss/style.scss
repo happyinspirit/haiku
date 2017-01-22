@@ -1,24 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant:400,700');
 @import '_partials';
 @import 'variables';
 
-.rect-dark-bamboo {
-    @include rectangle(50px, 200px, $dark-green, 0);
+html {
+    font-family: 'Cormorant', serif;
 }
 
-.rect-lt-bamboo {
-    @include rectangle(50px, 200px, $light-green, 0);
+.top-bar-left {
+    margin: 0 7rem;
+
+    @include breakpoint(xs) {
+        margin: 0 3.5rem;
+    }
+
+    h2 {
+        @include breakpoint(xs) {
+            font-size: 1.5rem;
+        }
+    }
 }
 
-.leaf-left {
-    background-color: $dark-green;
-    height: 100px;
-    left: -2rem;
-    position: relative;
-    top: 17rem;
-    width: 100px;
-    -moz-border-radius: 100px 0px;
-    -webkit-border-radius: 100px 0px;
-    border-radius: 100px 0px;
+.bamboo-1 {
+    @include breakpoint(xs) {
+        display: none;
+    }
 }
 
 .leaf-right {
@@ -31,4 +36,64 @@
     -moz-border-radius: 0px 100px;
     -webkit-border-radius: 0px 100px;
     border-radius: 0px 100px;
+}
+
+.rect-dark-bamboo {
+    @include rectangle(50px, 225px, $dark-green, 0);
+}
+
+.rect-lt-bamboo {
+    @include rectangle(50px, 225px, $light-green, 0);
+}
+
+.leaf-left {
+    background-color: $dark-green;
+    height: 100px;
+    left: -2rem;
+    position: relative;
+    top: 17rem;
+    width: 100px;
+    -moz-border-radius: 100px 0px;
+    -webkit-border-radius: 100px 0px;
+    border-radius: 100px 0px;
+
+    @include breakpoint(xs) {
+        left: 2rem;
+        top: 4rem;
+    }
+}
+
+.large-8 {
+    margin-top: 13rem;
+
+    @include breakpoint(xs) {
+        margin-top: 16.5rem;
+    }
+
+    div {
+        font-size: 2rem;
+
+        @include breakpoint(xs) {
+            font-size: 1.5rem;
+        }
+    }
+
+    button {
+        background: $dark-green;
+        margin: 2rem 0 0 7rem;
+
+        @include breakpoint(xs) {
+            margin-left: 4rem;
+        }
+
+        &:focus {
+            background: $dark-green;
+            border: none;
+        }
+
+        &:hover, &:active {
+            background: rgba($dark-green, .75);
+            border: 2px solid $dark-green;
+        }
+    }
 }
